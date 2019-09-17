@@ -1,0 +1,12 @@
+h2 {
+    left: 50%;
+    top: 50%
+}
+form {
+    position : absolute;  
+    width: 50%;
+    left: 30%;
+    top: 30%;
+    padding: 10px;
+    border: 1px solid gray;
+}
