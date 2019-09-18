@@ -27,10 +27,18 @@ export class LoginComponent implements OnInit {
         username: ['', Validators.required],
         password: ['', Validators.required]
     });
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
+  get f() { return this.loginForm.controls; }
+
   onSubmit() {
-  
+    console.log('form submitted triggered')
+    this.submitted = true;
+    if (this.loginForm.invalid) {
+        return;
+    }
+    this.router.navigate(['/dashboard']);
   }
 
 }
