@@ -3,8 +3,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
-// import { AlertService, AuthenticationService } from '@/_services';
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -24,8 +22,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-        username: ['', Validators.required],
-        password: ['', Validators.required]
+      username: ['', Validators.required],
+      password: ['', Validators.required]
     });
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
@@ -36,9 +34,9 @@ export class LoginComponent implements OnInit {
     console.log('form submitted triggered')
     this.submitted = true;
     if (this.loginForm.invalid) {
-        return;
+      return;
     }
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/appLayout']);
   }
 
 }
